@@ -39,7 +39,6 @@ model Post {
   updatedAt          DateTime @updatedAt
   userId             String @db.ObjectId
   likedIds           String[] @db.ObjectId
-  image              String?
 
   user User @relation(fields: [userId], references: [id], onDelete: Cascade)
 
