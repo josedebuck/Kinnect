@@ -84,8 +84,13 @@ const Form: React.FC<FormProps> = ({ placeholder, isComment, postId }) => {
                 transition"
             />
             <div className="mt-4 flex flex-row justify-end">
-              <Button disabled={isLoading || !body} onClick={onSubmit} label="Post itt" />
-            </div>
+  {/* Elimina el botón "Post it" y coloca un mensaje de confirmación */}
+  {isLoading ? (
+    <p>Posting...</p>
+  ) : (
+    <Button disabled={!body} label="Post" onClick={onSubmit} />
+  )}
+</div>
           </div>
         </div>
       ) : (
