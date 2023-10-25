@@ -61,7 +61,7 @@ const SidebarTweetButton = () => {
         onClose={closeModal}
         onSubmit={handlePostSubmit}
         title="Create a Post"
-        body={<Form placeholder="What's on your mind?" />}
+        body={<Form placeholder="What are you Kinnecting?" />}
         actionLabel="Post"
       />
     </div>
