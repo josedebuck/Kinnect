@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { useCallback, useState } from 'react';
+import { useCallback, useRef, useState } from 'react';
 import { toast } from 'react-hot-toast';
 
 import useLoginModal from '@/hooks/useLoginModal';
@@ -24,7 +24,7 @@ const Form: React.FC<FormProps> = ({ placeholder, isComment, postId }) => {
   const { data: currentUser } = useCurrentUser();
   const { mutate: mutatePosts } = usePosts();
   const { mutate: mutatePost } = usePost(postId as string);
-
+  const textareaRef = useRef<HTMLTextAreaElement>(null);
   const [body, setBody] = useState('');
   const [isLoading, setIsLoading] = useState(false);
 
@@ -84,7 +84,7 @@ const Form: React.FC<FormProps> = ({ placeholder, isComment, postId }) => {
                 transition"
             />
             <div className="mt-4 flex flex-row justify-end">
-              <Button disabled={isLoading || !body} onClick={onSubmit} label="Post" />
+              <Button disabled={isLoading || !body} onClick={onSubmit} label="Post itt" />
             </div>
           </div>
         </div>
